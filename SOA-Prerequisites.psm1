@@ -62,7 +62,7 @@ Function Write-Important {
     Write-Host "#############################################" -ForegroundColor Yellow
     Write-Host "#                 IMPORTANT                 #" -ForegroundColor Yellow
     Write-Host "#############################################" -ForegroundColor Yellow
-    Write-Host ""
+    Write-Host "Test"
 }
 
 function New-TemporaryDirectory {

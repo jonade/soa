@@ -15,4 +15,5 @@ jobs:
       shell: pwsh
       run: |
         .\.github\build\build.ps1
+        Update-ModuleManifest -Path ".\MyTestSOAModule" -ModuleVersion ${{ github.ref_name }}
         Publish-Module -Path ".\MyTestSOAModule" -NuGetApiKey $env:NUGET_KEY -Verbose

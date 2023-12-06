@@ -9,6 +9,9 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        ref: ${{ github.event.pull_request.head.ref }}
     - name: Build and publish
       env:
         NUGET_KEY: ${{ secrets.NUGET_KEY }}
@@ -22,5 +25,6 @@ jobs:
       run: |
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
+        git add --all .
         git commit -am "Bump version"
         git push

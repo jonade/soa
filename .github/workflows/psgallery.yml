@@ -12,8 +12,9 @@ jobs:
     - name: Build and publish
       env:
         NUGET_KEY: ${{ secrets.NUGET_KEY }}
+        MODULE_VER: ${{ github.ref_name }}
       shell: pwsh
       run: |
         .\.github\build\build.ps1
-        Update-ModuleManifest -Path ".\MyTestSOAModule" -ModuleVersion ${{ github.ref_name }}
+        Update-ModuleManifest -Path ".\MyTestSOAModule" -ModuleVersion ($env:MODULE_VER).TrimStart("v")
         Publish-Module -Path ".\MyTestSOAModule" -NuGetApiKey $env:NUGET_KEY -Verbose

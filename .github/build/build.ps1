@@ -11,5 +11,3 @@ Import-PackageProvider -Name NuGet -force | Out-Null
 if ((Get-PSRepository -Name PSGallery).InstallationPolicy -ne 'Trusted') {
     Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
 }
-Write-Verbose ""
-Update-ModuleManifest -Path ".\MyTestSOAModule\MyTestSOAModule.psd1" -ModuleVersion ($env:MODULE_VER).TrimStart("v")

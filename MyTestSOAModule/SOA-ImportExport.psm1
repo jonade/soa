@@ -1,4 +1,4 @@
-#Requires -Version 5.1
+ond#Requires -Version 5.1
 
 <#
 
@@ -7,7 +7,7 @@
 
     .DESCRIPTION
     
-        LogAnalytics only used for SOA as a Service delivery. Change
+        LogAnalytics only used for SOA as a Service delivery. Second
 
         ############################################################################
         # This sample script is not supported under any Microsoft standard support program or service. 

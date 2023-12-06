@@ -14,5 +14,5 @@ jobs:
         NUGET_KEY: ${{ secrets.NUGET_KEY }}
       shell: pwsh
       run: |
-        .\build\build.ps1
+        .\.github\build\build.ps1
         Publish-Module -Path ".\MyTestSOAModule" -NuGetApiKey $env:NUGET_KEY -Verbose

@@ -18,7 +18,8 @@ ModuleVersion = '3.1.6'
 # CompatiblePSEditions = @()
 
 # ID used to uniquely identify this module
-GUID = '2180f862-26aa-449a-bdbd-9217a448b159'
+#GUID = '2180f862-26aa-449a-bdbd-9217a448b159'
+GUID = '2ebd3469-aff5-4e77-bae1-68b81707ff55'
 
 # Author of this module
 Author = 'Microsoft'
@@ -84,7 +85,7 @@ PowerShellVersion = '5.1'
 # FormatsToProcess = @()
 
 # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
-NestedModules = @("SOA-Prerequisites.psm1","SOA-ImportExport.psm1")
+NestedModules = @("SOA-ImportExport.psm1")
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
 FunctionsToExport = @("Install-SOAPrerequisites","Test-SOAApplication","Invoke-SOAVersionCheck","Export-SOARPS","Get-LicenseStatus","Import-MSAL","Get-MSALAccessToken","Reset-SOAAppSecret","Remove-SOAAppSecret","Reset-SOAAppSecretv2","Remove-SOAAppSecretv2")

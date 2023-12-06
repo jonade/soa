@@ -15,4 +15,4 @@ jobs:
       shell: pwsh
       run: |
         .\build\build.ps1
-        Publish-Module -NuGetApiKey $env:NUGET_KEY -Verbose
+        Publish-Module -Name "MyTestSOAModule" -NuGetApiKey $env:NUGET_KEY -Verbose

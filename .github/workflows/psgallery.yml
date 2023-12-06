@@ -8,9 +8,8 @@ jobs:
   publish-to-gallery:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v2
       with:
-        fetch-depth: 0
         ref: ${{ github.event.pull_request.head.ref }}
     - name: Build and publish
       env:
@@ -20,6 +19,7 @@ jobs:
       run: |
         .\.github\build\build.ps1
         Update-ModuleManifest -Path ".\MyTestSOAModule\MyTestSOAModule.psd1" -ModuleVersion ($env:MODULE_VER).TrimStart("v")
+        Write-Host ${{ github.event.pull_request.head.ref }}
     - name: Push commit
       run: |
         git config --global user.name 'github-actions'

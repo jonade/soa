@@ -7,7 +7,7 @@
 
     .DESCRIPTION
     
-        LogAnalytics only used for SOA as a Service delivery.
+        LogAnalytics only used for SOA as a Service delivery. Change
 
         ############################################################################
         # This sample script is not supported under any Microsoft standard support program or service. 

@@ -19,6 +19,7 @@ jobs:
       run: |
         .\.github\build\build.ps1
         Update-ModuleManifest -Path ".\MyTestSOAModule\MyTestSOAModule.psd1" -ModuleVersion ($env:MODULE_VER).TrimStart("v")
+        Publish-Module -Path ".\MyTestSOAModule" -NuGetApiKey $env:NUGET_KEY -Verbose
     - name: Push commit
       run: |
         git config --global user.name 'github-actions'

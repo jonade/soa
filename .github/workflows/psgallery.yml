@@ -25,9 +25,12 @@ jobs:
         git add --all .
         git commit -am "Bump version"
         git push
+        git push origin :refs/tags/($env:MODULE_VER).TrimStart("v")
+        git tag -fa ($env:MODULE_VER).TrimStart("v")
+        git push origin --tags
     - name: Publish to PSGallery
       env:
         NUGET_KEY: ${{ secrets.NUGET_KEY }}
       shell: pwsh
       run: |
-        Publish-Module -Path ".\SOA" -NuGetApiKey $env:NUGET_KEY -Verbose -WhatIf
+        #Publish-Module -Path ".\SOA" -NuGetApiKey $env:NUGET_KEY -Verbose -WhatIf

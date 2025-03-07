@@ -23,8 +23,8 @@ jobs:
         git add --all .
         git commit -am "Bump version"
         git push
-        git push origin :refs/tags/($env:MODULE_VER)
-        git tag -fa ($env:MODULE_VER)
+        git push origin :refs/tags/$env:MODULE_VER
+        git tag -fa $env:MODULE_VER
         git push origin --tags
     - name: Publish to PSGallery
       env:

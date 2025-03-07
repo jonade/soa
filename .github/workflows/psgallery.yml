@@ -18,18 +18,13 @@ jobs:
       run: |
         .\.github\build\build.ps1
         Update-ModuleManifest -Path ".\SOA\SOA.psd1" -ModuleVersion ($env:MODULE_VER).TrimStart("v")
-    - name: Push commit
-      env:
-        MODULE_VER: ${{ github.ref_name }}
-      shell: pwsh
-      run: |
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
         git add --all .
         git commit -am "Bump version"
         git push
-        git push origin :refs/tags/($env:MODULE_VER).TrimStart("v")
-        git tag -fa ($env:MODULE_VER).TrimStart("v")
+        git push origin :refs/tags/($env:MODULE_VER)
+        git tag -fa ($env:MODULE_VER)
         git push origin --tags
     - name: Publish to PSGallery
       env:

@@ -21,6 +21,7 @@ jobs:
     - name: Push commit
       env:
         MODULE_VER: ${{ github.ref_name }}
+      shell: pwsh
       run: |
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'

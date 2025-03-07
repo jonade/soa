@@ -19,6 +19,8 @@ jobs:
         .\.github\build\build.ps1
         Update-ModuleManifest -Path ".\SOA\SOA.psd1" -ModuleVersion ($env:MODULE_VER).TrimStart("v")
     - name: Push commit
+      env:
+        MODULE_VER: ${{ github.ref_name }}
       run: |
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'

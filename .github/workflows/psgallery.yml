@@ -13,7 +13,6 @@ jobs:
         ref: master
     - name: Build module
       env:
-        NUGET_KEY: ${{ secrets.NUGET_KEY }}
         MODULE_VER: ${{ github.ref_name }}
       shell: pwsh
       run: |
